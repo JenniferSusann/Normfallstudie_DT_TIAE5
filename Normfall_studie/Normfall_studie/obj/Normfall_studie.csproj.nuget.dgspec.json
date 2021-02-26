@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\JenniferMentener\\OneDrive - ipso! Bildung\\Desktop\\Normfallstudie_DT_TIAE5\\Normfall_studie\\Normfall_studie\\Normfall_studie.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\JenniferMentener\\OneDrive - ipso! Bildung\\Desktop\\Normfallstudie_DT_TIAE5\\Normfall_studie\\Normfall_studie\\Normfall_studie.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\JenniferMentener\\OneDrive - ipso! Bildung\\Desktop\\Normfallstudie_DT_TIAE5\\Normfall_studie\\Normfall_studie\\Normfall_studie.csproj",
+        "projectName": "Normfall_studie",
+        "projectPath": "C:\\Users\\JenniferMentener\\OneDrive - ipso! Bildung\\Desktop\\Normfallstudie_DT_TIAE5\\Normfall_studie\\Normfall_studie\\Normfall_studie.csproj",
+        "packagesPath": "C:\\Users\\JenniferMentener\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JenniferMentener\\OneDrive - ipso! Bildung\\Desktop\\Normfallstudie_DT_TIAE5\\Normfall_studie\\Normfall_studie\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\JenniferMentener\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "targetAlias": "net461",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "targetAlias": "net461",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
