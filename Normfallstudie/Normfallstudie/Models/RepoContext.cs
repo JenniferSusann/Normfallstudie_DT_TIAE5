@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Normfallstudie
 {
-  public class RepositoryContext : DbContext
+  public class RepoContext : DbContext
   {
-    public RepositoryContext(DbContextOptions options)
+    public RepoContext(DbContextOptions options)
       :base(options)
     {
     }

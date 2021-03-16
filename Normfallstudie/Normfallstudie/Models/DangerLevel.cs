@@ -7,13 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Normfallstudie.Models
 {
-  [Table("DangerLevel")]
+  [Table("DangerLevel")] // created Table with the Name DangerLevel
   public class DangerLevel
   {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // used to set DangerLevelId as PrimaryKey in the Database
     public long DangerLevelId { get; set; }
-    public int score { get; set; }
+    public int Score { get; set; }
+    public ICollection<Hazard> Hazards { get; set; } // used to extend functionality to add, remove and update elements in the list
 
   }
 }

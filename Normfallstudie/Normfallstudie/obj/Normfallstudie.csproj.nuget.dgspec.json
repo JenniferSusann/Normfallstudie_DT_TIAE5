@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jenni\\Desktop\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj": {}
+    "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jenni\\Desktop\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj": {
+    "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jenni\\Desktop\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj",
+        "projectUniqueName": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj",
         "projectName": "Normfallstudie",
-        "projectPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj",
+        "projectPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\Normfallstudie\\Normfallstudie\\Normfallstudie.csproj",
         "packagesPath": "C:\\Users\\jenni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie\\Normfallstudie\\obj\\",
+        "outputPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\Normfallstudie\\Normfallstudie\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

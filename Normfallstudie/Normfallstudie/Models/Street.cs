@@ -7,13 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Normfallstudie.Models
 {
-  [Table("Street")] // erstellt tabelle mit Namen Street
+  [Table("Street")] // created Table with the Name Street
   public class Street
   {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // used to set StaffId as PrimaryKey in the Database
     public long StreetId { get; set; }
     public string StreetName { get; set; }
+    public ICollection<Address> Addresses { get; set; }
 
     [ForeignKey(nameof(HouseNumber))]
     public HouseNumber HouseNumberId { get; set; }

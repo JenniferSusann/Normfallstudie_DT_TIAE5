@@ -3,21 +3,38 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Normfallstudie;
 
 namespace Normfallstudie.Migrations
 {
-    [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(RepoContext))]
+    [Migration("20210315235428_Normfallstudie.Models.RepoContext")]
+    partial class NormfallstudieModelsRepoContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("HazardObject", b =>
+                {
+                    b.Property<long>("HazardsHazardId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ObjectsObjectId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("HazardsHazardId", "ObjectsObjectId");
+
+                    b.HasIndex("ObjectsObjectId");
+
+                    b.ToTable("HazardObject");
+                });
 
             modelBuilder.Entity("Normfallstudie.Models.Address", b =>
                 {
@@ -26,7 +43,12 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("Street")
+                        .HasColumnType("bigint");
+
                     b.HasKey("AddressId");
+
+                    b.HasIndex("Street");
 
                     b.ToTable("Address");
                 });
@@ -56,7 +78,7 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("score")
+                    b.Property<int>("Score")
                         .HasColumnType("int");
 
                     b.HasKey("DangerLevelId");
@@ -71,10 +93,15 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("DangerLevel")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("HazardId");
+
+                    b.HasIndex("DangerLevel");
 
                     b.ToTable("Hazard");
                 });
@@ -101,10 +128,15 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("Address")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Descripton")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ObjectId");
+
+                    b.HasIndex("Address");
 
                     b.ToTable("Object");
                 });
@@ -116,10 +148,15 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("Person")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("ObjectOwnerId");
+
+                    b.HasIndex("Person");
 
                     b.ToTable("ObjectOwner");
                 });
@@ -131,6 +168,9 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("AddressId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -140,7 +180,19 @@ namespace Normfallstudie.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("Object")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("Title")
+                        .HasColumnType("bigint");
+
                     b.HasKey("PersonId");
+
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("Object");
+
+                    b.HasIndex("Title");
 
                     b.ToTable("Person");
                 });
@@ -152,10 +204,15 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("Person")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("PropertyOwnerId");
+
+                    b.HasIndex("Person");
 
                     b.ToTable("PropertyOwner");
                 });
@@ -170,9 +227,14 @@ namespace Normfallstudie.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("Person")
+                        .HasColumnType("bigint");
+
                     b.HasKey("StaffId");
 
-                    b.ToTable("staff");
+                    b.HasIndex("Person");
+
+                    b.ToTable("Staff");
                 });
 
             modelBuilder.Entity("Normfallstudie.Models.Street", b =>
@@ -182,6 +244,9 @@ namespace Normfallstudie.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("CityId")
+                        .HasColumnType("bigint");
+
                     b.Property<long?>("HouseNumber")
                         .HasColumnType("bigint");
 
@@ -190,13 +255,122 @@ namespace Normfallstudie.Migrations
 
                     b.HasKey("StreetId");
 
+                    b.HasIndex("CityId");
+
                     b.HasIndex("HouseNumber");
 
                     b.ToTable("Street");
                 });
 
+            modelBuilder.Entity("Normfallstudie.Models.Title", b =>
+                {
+                    b.Property<long>("TitleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TitleId");
+
+                    b.ToTable("Title");
+                });
+
+            modelBuilder.Entity("HazardObject", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Hazard", null)
+                        .WithMany()
+                        .HasForeignKey("HazardsHazardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Normfallstudie.Models.Object", null)
+                        .WithMany()
+                        .HasForeignKey("ObjectsObjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Address", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Street", "StreetId")
+                        .WithMany("Addresses")
+                        .HasForeignKey("Street");
+
+                    b.Navigation("StreetId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Hazard", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.DangerLevel", "DangerLevelId")
+                        .WithMany("Hazards")
+                        .HasForeignKey("DangerLevel");
+
+                    b.Navigation("DangerLevelId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Object", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Address", "AddressId")
+                        .WithMany("Objects")
+                        .HasForeignKey("Address");
+
+                    b.Navigation("AddressId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.ObjectOwner", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Person", "PersonId")
+                        .WithMany("ObjectOwners")
+                        .HasForeignKey("Person");
+
+                    b.Navigation("PersonId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Person", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Address", null)
+                        .WithMany("Persons")
+                        .HasForeignKey("AddressId");
+
+                    b.HasOne("Normfallstudie.Models.Object", "ObjectId")
+                        .WithMany("Persons")
+                        .HasForeignKey("Object");
+
+                    b.HasOne("Normfallstudie.Models.Title", "TitleId")
+                        .WithMany("Persons")
+                        .HasForeignKey("Title");
+
+                    b.Navigation("ObjectId");
+
+                    b.Navigation("TitleId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.PropertyOwner", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Person", "PersonId")
+                        .WithMany("PropertyOwners")
+                        .HasForeignKey("Person");
+
+                    b.Navigation("PersonId");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Staff", b =>
+                {
+                    b.HasOne("Normfallstudie.Models.Person", "PersonId")
+                        .WithMany("Staffs")
+                        .HasForeignKey("Person");
+
+                    b.Navigation("PersonId");
+                });
+
             modelBuilder.Entity("Normfallstudie.Models.Street", b =>
                 {
+                    b.HasOne("Normfallstudie.Models.City", null)
+                        .WithMany("Streets")
+                        .HasForeignKey("CityId");
+
                     b.HasOne("Normfallstudie.Models.HouseNumber", "HouseNumberId")
                         .WithMany("Streets")
                         .HasForeignKey("HouseNumber");
@@ -204,9 +378,50 @@ namespace Normfallstudie.Migrations
                     b.Navigation("HouseNumberId");
                 });
 
+            modelBuilder.Entity("Normfallstudie.Models.Address", b =>
+                {
+                    b.Navigation("Objects");
+
+                    b.Navigation("Persons");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.City", b =>
+                {
+                    b.Navigation("Streets");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.DangerLevel", b =>
+                {
+                    b.Navigation("Hazards");
+                });
+
             modelBuilder.Entity("Normfallstudie.Models.HouseNumber", b =>
                 {
                     b.Navigation("Streets");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Object", b =>
+                {
+                    b.Navigation("Persons");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Person", b =>
+                {
+                    b.Navigation("ObjectOwners");
+
+                    b.Navigation("PropertyOwners");
+
+                    b.Navigation("Staffs");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Street", b =>
+                {
+                    b.Navigation("Addresses");
+                });
+
+            modelBuilder.Entity("Normfallstudie.Models.Title", b =>
+                {
+                    b.Navigation("Persons");
                 });
 #pragma warning restore 612, 618
         }
