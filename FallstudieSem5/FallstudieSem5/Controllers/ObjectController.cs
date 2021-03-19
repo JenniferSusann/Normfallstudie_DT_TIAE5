@@ -7,11 +7,10 @@ using FallstudieSem5.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging.Abstractions;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace FallstudieSem5.Controllers
 {
-  [Route("api/person")]
+  [Route("api/object")]
   [ApiController]
   public class ObjectController : ControllerBase
   {
@@ -27,35 +26,35 @@ namespace FallstudieSem5.Controllers
     public IActionResult Get()
     {
       IEnumerable<Object> objects = _dataRepository.GetAll();
-      return Ok(persons);
+      return Ok(objects);
     }
 
     [HttpGet("{id}", Name = "Get")]
     public IActionResult Get(long id)
     {
-      Object object = _dataRepository.Get(id);
-      if (object == null)
+      Object @object = _dataRepository.Get(id);
+      if (@object == null)
       {
         return NotFound("Object not found.");
       }
-      return Ok(object);
+      return Ok(@object);
     }
 
     [HttpPost]
-    public IActionResult Post([FromBody] Object Object)
+    public IActionResult Post([FromBody] Object @object)
     {
-      if (Object == null)
+      if (@object == null)
       {
         return BadRequest("Object is null");
       }
-      _dataRepository.Add(object);
+      _dataRepository.Add(@object);
       return CreatedAtRoute(
-        "Get", new { Id = object.ObjectId }, object);
+        "Get", new { Id = @object.ObjectId }, @object);
     }
     [HttpPut("{id}")]
-    public IActionResult Put(long id, [FromBody] Object object)
+    public IActionResult Put(long id, [FromBody] Object @object)
     {
-      if (object == null)
+      if (@object == null)
       {
         return BadRequest("Object is null.");
       }
@@ -64,19 +63,19 @@ namespace FallstudieSem5.Controllers
       {
         return NotFound("Person not found");
       }
-      _dataRepository.Update(objectToUpdate, object);
+      _dataRepository.Update(objectToUpdate, @object);
       return NoContent();
     }
 
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
-      Object object = _dataRepository.Get(id);
-      if (object == null)
+      Object @object = _dataRepository.Get(id);
+      if (@object == null)
       {
         return NotFound("object not found");
       }
-      _dataRepository.Delete(object);
+      _dataRepository.Delete(@object);
       return NoContent();
     }
 
