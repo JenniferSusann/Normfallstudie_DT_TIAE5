@@ -1,3 +1,6 @@
+using FallstudieSem5.Models;
+using FallstudieSem5.Models.Manager;
+using FallstudieSem5.Models.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +23,7 @@ namespace FallstudieSem5
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddDbContext<Context>(options => options.UseSqlServer(Configuration["ConnectionStrings:FallstudieSemDB"]));
+      services.AddScoped<IDataRepository<Person>, PersonManager>();
       services.AddControllers();
     }
 
