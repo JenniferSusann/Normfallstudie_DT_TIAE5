@@ -27,7 +27,7 @@ namespace FallstudieSem5.Controllers
       return Ok(objects);
     }
 
-    [HttpGet("{id}", Name = "Get")]
+    [HttpGet("{id}", Name = "GetObject")]
     public IActionResult Get(long id)
     {
       Object @object = _dataRepository.Get(id);

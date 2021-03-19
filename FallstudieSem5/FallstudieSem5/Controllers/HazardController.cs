@@ -21,7 +21,7 @@ namespace FallstudieSem5.Controllers
       _dataRepository = dataRepository;
     }
     
-    [HttpGet("{id}", Name = "Get")]
+    [HttpGet("{id}", Name = "GetHazard")]
     public IActionResult Get(long id)
     {
       Hazard hazard = _dataRepository.Get(id);

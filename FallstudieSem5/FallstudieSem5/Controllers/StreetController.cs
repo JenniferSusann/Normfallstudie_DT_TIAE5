@@ -20,7 +20,7 @@ namespace FallstudieSem5.Controllers
       _dataRepository = dataRepository;
     }
     
-    [HttpGet("{id}", Name = "Get")]
+    [HttpGet("{id}", Name = "GetStreet")]
     public IActionResult Get(long id)
     {
       Street street = _dataRepository.Get(id);

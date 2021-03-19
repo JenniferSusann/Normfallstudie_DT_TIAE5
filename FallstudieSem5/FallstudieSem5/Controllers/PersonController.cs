@@ -30,7 +30,7 @@ namespace FallstudieSem5.Controllers
       return Ok(persons);
     }
 
-    [HttpGet("{id}", Name = "Get")]
+    [HttpGet("{id}", Name = "GetPerson")]
     public IActionResult Get(long id)
     {
       Person person = _dataRepository.Get(id);

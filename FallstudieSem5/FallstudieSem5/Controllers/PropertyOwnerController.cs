@@ -20,7 +20,7 @@ namespace FallstudieSem5.Controllers
       _dataRepository = dataRepository;
     }
     
-    [HttpGet("{id}", Name = "Get")]
+    [HttpGet("{id}", Name = "GetPropertyOwner")]
     public IActionResult Get(long id)
     {
       PropertyOwner propertyOwner = _dataRepository.Get(id);
