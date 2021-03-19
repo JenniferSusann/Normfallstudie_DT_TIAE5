@@ -25,6 +25,7 @@ namespace FallstudieSem5
       services.AddDbContext<Context>(options => options.UseSqlServer(Configuration["ConnectionStrings:FallstudieSemDB"]));
       services.AddScoped<IDataRepository<Person>, PersonManager>();
       services.AddScoped<IDataRepository<Object>, ObjectManager>();
+      services.AddScoped<IDataRepository<Staff>, StaffManager>();
       services.AddControllers();
     }
 
