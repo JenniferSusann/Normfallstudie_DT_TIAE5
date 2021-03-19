@@ -24,9 +24,17 @@ namespace FallstudieSem5
     {
       services.AddDbContext<Context>(options => options.UseSqlServer(Configuration["ConnectionStrings:FallstudieSemDB"]));
       services.AddScoped<IDataRepository<Person>, PersonManager>();
-      services.AddScoped<IDataRepository<Object>, ObjectManager>();
-      services.AddScoped<IDataRepository<Staff>, StaffManager>();
       services.AddScoped<IDataRepository<Address>, AddressManager>();
+      services.AddScoped<IDataRepository<City>, CityManager>();
+      services.AddScoped<IDataRepository<Hazard>, HazardManager>();
+      services.AddScoped<IDataRepository<HouseNumber>, HouseNumberManager>();
+      services.AddScoped<IDataRepository<DangerLevel>, DangerLevelManager>();
+      services.AddScoped<IDataRepository<Object>, ObjectManager>();
+      services.AddScoped<IDataRepository<ObjectOwner>, ObjectOwnerManager>();
+      services.AddScoped<IDataRepository<PropertyOwner>, PropertyOwnerManager>();
+      services.AddScoped<IDataRepository<Staff>, StaffManager>();
+      services.AddScoped<IDataRepository<Street>, StreetManager>();
+      services.AddScoped<IDataRepository<Title>, TitleManager>();
       services.AddControllers();
     }
 

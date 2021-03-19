@@ -18,7 +18,7 @@ namespace FallstudieSem5
     
     [Required(ErrorMessage = "Description is required")]
     [StringLength(255)]
-    public string Descripton { get; set; }
+    public string Description { get; set; }
 
     [JsonIgnore]
     public ICollection<Person> Persons { get; set; }

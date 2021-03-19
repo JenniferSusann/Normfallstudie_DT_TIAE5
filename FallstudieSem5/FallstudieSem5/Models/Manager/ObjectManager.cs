@@ -30,7 +30,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public void Update(Object @object, Object entity)
     {
-      @object.Descripton = entity.Descripton;
+      @object.Description = entity.Description;
 
       _objectContext.SaveChanges();
     }

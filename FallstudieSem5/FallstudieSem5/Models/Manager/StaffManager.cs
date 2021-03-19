@@ -8,7 +8,7 @@ namespace FallstudieSem5.Models.Manager
 {
   public class StaffManager : IDataRepository<Staff>
   {
-    readonly Context _StaffContext;
+    readonly Context _staffContext;
 
       public StaffManager(Context context)
     {
@@ -18,7 +18,7 @@ namespace FallstudieSem5.Models.Manager
     {
       return _staffContext.Staffs.ToList();
     }
-    public Object Get(long id)
+    public Staff Get(long id)
     {
       return _staffContext.Staffs
         .FirstOrDefault(s => s.StaffId == id);
@@ -30,7 +30,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public void Update(Staff staff, Staff entity)
     {
-      Staff.Description = entity.Description;
+      staff.Description = entity.Description;
 
       _staffContext.SaveChanges();
     }

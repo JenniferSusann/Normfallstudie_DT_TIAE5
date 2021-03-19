@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging.Abstractions;
 namespace FallstudieSem5.Controllers
 {
   [Route("api/staff")]
-  [ApiController]
   public class StaffController : ControllerBase
   {
     private readonly IDataRepository<Staff> _dataRepository;
@@ -20,14 +19,14 @@ namespace FallstudieSem5.Controllers
     {
       _dataRepository = dataRepository;
     }
-
+    
     [HttpGet("{id}", Name = "Get")]
     public IActionResult Get(long id)
     {
       Staff staff = _dataRepository.Get(id);
       if (staff == null)
       {
-        return NotFound("Staff not found.");
+        return NotFound("Object not found.");
       }
       return Ok(staff);
     }

@@ -19,6 +19,7 @@ namespace FallstudieSem5
     public DbSet<HouseNumber> HouseNumbers { get; set; }
     public DbSet<Street> Streets { get; set; }
     public DbSet<Address> Addresses { get; set; }
+    public DbSet<Title> Titles { get; set; }
     public DbSet<DangerLevel> DangerLevels { get; set; }
     public DbSet<Hazard> Hazards { get; set; }
     public DbSet<Object> Objects { get; set; }

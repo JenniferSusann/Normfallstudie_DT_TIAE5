@@ -10,72 +10,63 @@ using Microsoft.Extensions.Logging.Abstractions;
 
 namespace FallstudieSem5.Controllers
 {
-  [Route("api/address")]
-  [ApiController]
-  public class AddressController : ControllerBase
+  [Route("api/object")]
+  public class ObjectController : ControllerBase
   {
-    private readonly IDataRepository<Address> _dataRepository;
+    private readonly IDataRepository<Object> _dataRepository;
 
-    public AddressController(IDataRepository<Address> dataRepository)
+    public ObjectController(IDataRepository<Object> dataRepository)
     {
       _dataRepository = dataRepository;
     }
     
-    //get api/address
-    [HttpGet]
-    public IActionResult Get()
-    {
-      IEnumerable<Address> addresses = _dataRepository.GetAll();
-      return Ok(addresses);
-    }
-
     [HttpGet("{id}", Name = "Get")]
     public IActionResult Get(long id)
     {
-      Address address = _dataRepository.Get(id);
-      if (address == null)
+      Object @object = _dataRepository.Get(id);
+      if (@object == null)
       {
-        return NotFound("Address not found.");
+        return NotFound("Object not found.");
       }
-      return Ok(address);
+      return Ok(@object);
     }
 
     [HttpPost]
-    public IActionResult Post([FromBody] Address address)
+    public IActionResult Post([FromBody] Object @object)
     {
-      if (address == null)
+      if (@object == null)
       {
-        return BadRequest("Address is null");
+        return BadRequest("Object is null");
       }
-      _dataRepository.Add(address);
+      _dataRepository.Add(@object);
       return CreatedAtRoute(
-        "Get", new { Id = address.AddressId }, address);
+        "Get", new { Id = @object.ObjectId }, @object);
     }
     [HttpPut("{id}")]
-    public IActionResult Put(long id, [FromBody] Address address)
+    public IActionResult Put(long id, [FromBody] Object @object)
     {
-      if (address == null)
+      if (@object == null)
       {
-        return BadRequest("Address is null.");
+        return BadRequest("Object is null.");
       }
-      Address addressToUpdate = _dataRepository.Get(id);
-      if (addressToUpdate == null)
+      Object objectToUpdate = _dataRepository.Get(id);
+      if (objectToUpdate == null)
       {
-        return NotFound("Address not found");
+        return NotFound("address not found");
       }
-      _dataRepository.Update(addressToUpdate, address);
+      _dataRepository.Update(objectToUpdate, @object);
       return NoContent();
     }
 
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
-      Address address = _dataRepository.Get(id);
-      if (address == null)
+      Object @object = _dataRepository.Get(id);
+      if (@object == null)
       {
-        return NotFound("address not found");
+        return NotFound("object not found");
       }
-      _dataRepository.Delete(address);
+      _dataRepository.Delete(@object);
       return NoContent();
     }
 
