@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5.Models
 {
@@ -24,6 +25,7 @@ namespace FallstudieSem5.Models
     [Required(ErrorMessage = "CityId is Required")]
     public City City { get; set; }
 
+    [JsonIgnore]
     public ICollection<Address> Addresses { get; set; }
   }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5.Models
 {
@@ -17,6 +18,7 @@ namespace FallstudieSem5.Models
     [Required(ErrorMessage = "The Score is required")]
     public int Score { get; set; }
 
+    [JsonIgnore]
     public ICollection<Hazard> Hazards { get; set; } // used to extend functionality to add, remove and update elements in the list
 
   }

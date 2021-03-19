@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FallstudieSem5.Models;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5
 {
@@ -19,7 +20,9 @@ namespace FallstudieSem5
     [StringLength(255)]
     public string Descripton { get; set; }
 
+    [JsonIgnore]
     public ICollection<Person> Persons { get; set; }
+    [JsonIgnore]
     public ICollection<Hazard> Hazards { get; set; }
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5.Models
 {
@@ -18,6 +19,7 @@ namespace FallstudieSem5.Models
     [StringLength(20)]
     public string Description { get; set; }
 
+    [JsonIgnore]
     public ICollection<Person> Persons { get; set; }
   }
 }

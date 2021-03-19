@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5.Models
 {
@@ -17,7 +18,8 @@ namespace FallstudieSem5.Models
     [Required(ErrorMessage = "HouseNumber is Required")]
     [StringLength(20)]
     public string Number { get; set; } // set as string because the posibility of having a housenumber like 17a
-    
+
+    [JsonIgnore]
     public ICollection<Street> Streets { get; set; }
   }
 }

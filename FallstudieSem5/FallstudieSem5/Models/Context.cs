@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FallstudieSem5.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5
 {

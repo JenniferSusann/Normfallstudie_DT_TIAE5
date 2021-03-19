@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FallstudieSem5.Models
 {
@@ -26,9 +27,11 @@ namespace FallstudieSem5.Models
     [EmailAddress]
     public string Email { get; set; }
 
-
+    [JsonIgnore]
     public ICollection<Staff> Staffs { get; set; } // used to extend functionality to add, remove and update elements in the list
+    [JsonIgnore]
     public ICollection<PropertyOwner> PropertyOwners { get; set; }
+    [JsonIgnore]
     public ICollection<ObjectOwner> ObjectOwners { get; set; }
 
 
