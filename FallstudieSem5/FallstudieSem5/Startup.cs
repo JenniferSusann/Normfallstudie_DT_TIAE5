@@ -26,6 +26,7 @@ namespace FallstudieSem5
       services.AddScoped<IDataRepository<Person>, PersonManager>();
       services.AddScoped<IDataRepository<Object>, ObjectManager>();
       services.AddScoped<IDataRepository<Staff>, StaffManager>();
+      services.AddScoped<IDataRepository<Address>, AddressManager>();
       services.AddControllers();
     }
 
