@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BzMWPA2dmXwFxGIGkp6XP0kSlDJJHxfnoSHT8w31yHCwdLNPK77cnNcB+s0O5hD3s0cCO6jhCLrlgGMcf18V9g==",
+  "dgSpecHash": "OovkDPSH/pGodflV8ur5hLBBtoMcYgBavAKQYVTFLNqfStEJMBuozNijef23fYPMbLdGYxZAQkRZr9klLuk/Qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jenni\\Desktop\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
+  "projectFilePath": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jenni\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jenni\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

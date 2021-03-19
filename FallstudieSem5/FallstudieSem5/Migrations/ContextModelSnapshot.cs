@@ -85,6 +85,9 @@ namespace FallstudieSem5.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("HazardId");
 
                     b.HasIndex("DangerLevelId");

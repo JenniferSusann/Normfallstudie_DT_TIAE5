@@ -5756,11 +5756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jenni\\Desktop\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
+      "projectUniqueName": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
       "projectName": "FallstudieSem5",
-      "projectPath": "C:\\Users\\jenni\\Desktop\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
+      "projectPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\FallstudieSem5\\FallstudieSem5\\FallstudieSem5.csproj",
       "packagesPath": "C:\\Users\\jenni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jenni\\Desktop\\FallstudieSem5\\FallstudieSem5\\obj\\",
+      "outputPath": "C:\\Users\\jenni\\Desktop\\Normfallstudie_DT_TIAE5\\FallstudieSem5\\FallstudieSem5\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

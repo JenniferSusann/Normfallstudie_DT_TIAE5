@@ -16,6 +16,7 @@ namespace FallstudieSem5.Models
 
     [Required(ErrorMessage = "The Score is required")]
     public int Score { get; set; }
+
     public ICollection<Hazard> Hazards { get; set; } // used to extend functionality to add, remove and update elements in the list
 
   }

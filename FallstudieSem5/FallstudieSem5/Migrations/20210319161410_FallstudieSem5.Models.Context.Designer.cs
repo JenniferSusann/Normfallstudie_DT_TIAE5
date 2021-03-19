@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FallstudieSem5.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210319114946_FallstudieSem5.Models.Context")]
+    [Migration("20210319161410_FallstudieSem5.Models.Context")]
     partial class FallstudieSem5ModelsContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,6 +86,9 @@ namespace FallstudieSem5.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("HazardId");
 

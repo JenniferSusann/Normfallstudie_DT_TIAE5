@@ -67,6 +67,7 @@ namespace FallstudieSem5.Migrations
                     HazardId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DangerLevelId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>

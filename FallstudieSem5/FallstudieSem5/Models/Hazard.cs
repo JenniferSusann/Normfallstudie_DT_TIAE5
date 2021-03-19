@@ -17,6 +17,8 @@ namespace FallstudieSem5.Models
     [Required(ErrorMessage = "Description is required")]
     public string Description { get; set; }
 
+    public DateTime LastUpdated {get; set;}
+
     public ICollection<Object> Objects { get; set; } // used to extend functionality to add, remove and update elements in the list
 
     [Required(ErrorMessage = "DangerLevel is required")]
