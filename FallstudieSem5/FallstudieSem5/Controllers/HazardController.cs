@@ -20,7 +20,14 @@ namespace FallstudieSem5.Controllers
     {
       _dataRepository = dataRepository;
     }
-    
+
+    [HttpGet]
+    public IActionResult Get()
+    {
+      IEnumerable<Hazard> hazards = _dataRepository.GetAll();
+      return Ok(hazards);
+    }
+
     [HttpGet("{id}", Name = "GetHazard")]
     public IActionResult Get(long id)
     {
