@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FallstudieSem5.Models.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace FallstudieSem5.Models.Manager
 {

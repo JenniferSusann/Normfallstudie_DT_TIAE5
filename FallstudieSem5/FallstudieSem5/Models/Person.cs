@@ -39,5 +39,6 @@ namespace FallstudieSem5.Models
     public Title Title { get; set; }
 
     public Object Object { get; set; }
+    public Address Address { get; set; }
   }
 }

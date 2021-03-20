@@ -29,5 +29,8 @@ namespace FallstudieSem5
     [Required(ErrorMessage = "Address is Required")]
     public Address Address { get; set; }
 
+    [Required(ErrorMessage = "Hazard is Required")]
+    public Hazard Hazard { get; set; }
+
   }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FallstudieSem5.Models.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace FallstudieSem5.Models.Manager
 {
@@ -16,7 +17,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public IEnumerable<Address> GetAll()
     {
-      return _addressContext.Addresses.ToList();
+      return _addressContext.Addresses.Include(a => a.Street).ToList();
     }
     public Address Get(long id)
     {

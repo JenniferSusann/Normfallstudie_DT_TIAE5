@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FallstudieSem5.Models.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace FallstudieSem5.Models.Manager
 {
@@ -16,7 +17,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public IEnumerable<ObjectOwner> GetAll()
     {
-      return _objectownerContext.ObjectOwners.ToList();
+      return _objectownerContext.ObjectOwners.Include(ow => ow.Person).ToList();
     }
     public ObjectOwner Get(long id)
     {

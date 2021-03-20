@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FallstudieSem5.Models.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace FallstudieSem5.Models.Manager
 {
@@ -16,7 +17,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public IEnumerable<Hazard> GetAll()
     {
-      return _hazardContext.Hazards.ToList();
+      return _hazardContext.Hazards.Include(h => h.DangerLevel).ToList();
     }
     public Hazard Get(long id)
     {
