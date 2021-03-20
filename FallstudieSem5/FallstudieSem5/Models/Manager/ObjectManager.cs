@@ -17,7 +17,7 @@ namespace FallstudieSem5.Models.Manager
     }
     public IEnumerable<Object> GetAll()
     {
-      return _objectContext.Objects.Include(o => o.Hazard).ToList();
+      return _objectContext.Objects.ToList();
     }
     public Object Get(long id)
     {
